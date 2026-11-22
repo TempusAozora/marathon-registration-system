@@ -1,1 +1,1 @@
-# fun-run-registration-system-java
+# marathon-registration-system
