@@ -4,10 +4,26 @@
  */
 package com.mycompany.yrusprint;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author tempus
  */
-public class Runner {
+public class Runner extends Person {
+    private String singletSize; // from 2XS to 2XL
+    private RaceCategory raceCategory;
     
+    Runner(
+            PersonName name, 
+            String gender,
+            String contactNumber,
+            LocalDate birthDate, 
+            String singletSize, 
+            RaceCategory raceCategory
+    ) {
+        super(name, gender, birthDate, contactNumber);
+        this.singletSize = singletSize;
+        this.raceCategory = raceCategory;
+    }
 }
