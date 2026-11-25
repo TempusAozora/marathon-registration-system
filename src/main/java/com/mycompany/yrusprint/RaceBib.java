@@ -8,6 +8,8 @@ package com.mycompany.yrusprint;
  *
  * @author tempus
  */
-public class BibGenerator {
-    
+public class RaceBib {
+    static void generate(Registration registration) {
+		
+	}
 }
