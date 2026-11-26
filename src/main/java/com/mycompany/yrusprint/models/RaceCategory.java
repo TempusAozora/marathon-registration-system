@@ -1,5 +1,5 @@
 
-package com.mycompany.yrusprint;
+package com.mycompany.yrusprint.models;
 
 public class RaceCategory {
     
@@ -12,13 +12,13 @@ public class RaceCategory {
 
     // 2. Constructor
     public RaceCategory(String categoryName, double registrationFee,
-                        int minimumAge, int slotLimit) {
+                        int minimumAge, int slotLimit, int registeredSlots) {
 
         this.categoryName = categoryName;
         this.registrationFee = registrationFee;
         this.minimumAge = minimumAge;
         this.slotLimit = slotLimit;
-        this.registeredSlots = 0;
+        this.registeredSlots = registeredSlots;
     }
 
     // 3. Getters

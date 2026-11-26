@@ -2,23 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.yrusprint;
-
+package com.mycompany.yrusprint.gui;
 
 /**
  *
- * @author tempus2
+ * @author tempus
  */
-public class EventsMenu extends javax.swing.JPanel {
+public class EventRegister extends javax.swing.JPanel {
 
     /**
-     * Creates new form EventsMenu
+     * Creates new form EventRegister
      */
-    public EventsMenu() {
+    public EventRegister() {
         initComponents();
-        
-        super.setLayout(new GridLayout(4,4,5,5));
-        
     }
 
     /**

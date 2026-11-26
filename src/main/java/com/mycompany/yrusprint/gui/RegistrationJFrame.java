@@ -2,7 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.yrusprint;
+package com.mycompany.yrusprint.gui;
+
+import java.awt.CardLayout;
+
+import javax.swing.JButton;
+import javax.swing.JMenu;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,7 +23,22 @@ public class RegistrationJFrame extends javax.swing.JFrame {
      */
     public RegistrationJFrame() {
         initComponents();
-        super.setTitle("YRU Sprint");
+    }
+
+    public JPanel getBody() {
+        return body;
+    }
+
+    public JButton getEventsButton() {
+        return EventsButton;
+    }
+    
+    public JButton getSearchButton() {
+        return SearchButton;
+    }
+
+    public CardLayout getCardLayout() {
+        return (CardLayout)body.getLayout();
     }
 
     /**
@@ -30,62 +51,62 @@ public class RegistrationJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        menuTitle = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        eventMenu = new javax.swing.JMenu();
-        searchMenu = new javax.swing.JMenu();
+        jToolBar1 = new javax.swing.JToolBar();
+        EventsButton = new javax.swing.JButton();
+        SearchButton = new javax.swing.JButton();
+        body = new javax.swing.JPanel();
 
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("YRU sprint");
 
-        menuTitle.setFont(new java.awt.Font("Cantarell", 0, 20)); // NOI18N
-        menuTitle.setText("Menu Title");
+        jToolBar1.setRollover(true);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(menuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(555, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(menuTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(397, Short.MAX_VALUE))
-        );
+        EventsButton.setText("Events");
+        EventsButton.setFocusable(false);
+        EventsButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        EventsButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        EventsButton.addActionListener(this::EventsButtonActionPerformed);
+        jToolBar1.add(EventsButton);
 
-        jScrollPane1.setViewportView(jPanel1);
+        SearchButton.setText("Search");
+        SearchButton.setFocusable(false);
+        SearchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        SearchButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        SearchButton.addActionListener(this::SearchButtonActionPerformed);
+        jToolBar1.add(SearchButton);
 
-        eventMenu.setText("Events");
-        jMenuBar1.add(eventMenu);
-
-        searchMenu.setText("Search");
-        jMenuBar1.add(searchMenu);
-
-        setJMenuBar(jMenuBar1);
+        body.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 165, Short.MAX_VALUE))
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void EventsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EventsButtonActionPerformed
+
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,12 +134,10 @@ public class RegistrationJFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu eventMenu;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JButton EventsButton;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JPanel body;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel menuTitle;
-    private javax.swing.JMenu searchMenu;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
