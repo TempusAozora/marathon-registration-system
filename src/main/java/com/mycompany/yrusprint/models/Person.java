@@ -20,4 +20,20 @@ public class Person {
         this.birthDate = birthDate;
         this.contactNumber = contactNumber;
     }
+
+    public PersonName getName() {
+        return name;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
 }

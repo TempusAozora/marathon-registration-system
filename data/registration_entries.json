@@ -1,0 +1,155 @@
+[
+    {
+      "bibId": "E1-5K-001",
+      "runner": {
+        "name": {
+          "lastName": "Santos",
+          "firstName": "Juan",
+          "middleName": "Reyes"
+        },
+        "gender": "Male",
+        "contactNumber": "09171234567",
+        "birthDate": "2001-04-15",
+        "singletSize": "M"
+      },
+      "date": "2026-11-20",
+      "eventId": "1",
+      "raceCategory": "5K Fun Run"
+    },
+    {
+      "bibId": "E1-10K-001",
+      "runner": {
+        "name": {
+          "lastName": "Dela Cruz",
+          "firstName": "Maria",
+          "middleName": "Lopez"
+        },
+        "gender": "Female",
+        "contactNumber": "09181234567",
+        "birthDate": "2000-08-22",
+        "singletSize": "S"
+      },
+      "date": "2026-11-21",
+      "eventId": "1",
+      "raceCategory": "10K Run"
+    },
+    {
+      "bibId": "E1-21K-001",
+      "runner": {
+        "name": {
+          "lastName": "Garcia",
+          "firstName": "Pedro",
+          "middleName": "Miguel"
+        },
+        "gender": "Male",
+        "contactNumber": "09191234567",
+        "birthDate": "1998-01-10",
+        "singletSize": "L"
+      },
+      "date": "2026-11-22",
+      "eventId": "1",
+      "raceCategory": "21K Half Marathon"
+    },
+    {
+      "bibId": "E1-42K-001",
+      "runner": {
+        "name": {
+          "lastName": "Reyes",
+          "firstName": "Ana",
+          "middleName": "Cruz"
+        },
+        "gender": "Female",
+        "contactNumber": "09201234567",
+        "birthDate": "1995-12-05",
+        "singletSize": "XS"
+      },
+      "date": "2026-11-22",
+      "eventId": "1",
+      "raceCategory": "42K Full Marathon"
+    },
+    {
+      "bibId": "E2-3K-001",
+      "runner": {
+        "name": {
+          "lastName": "Mendoza",
+          "firstName": "Carlo",
+          "middleName": "Ramos"
+        },
+        "gender": "Male",
+        "contactNumber": "09211234567",
+        "birthDate": "2005-06-30",
+        "singletSize": "XL"
+      },
+      "date": "2026-11-23",
+      "eventId": "2",
+      "raceCategory": "3K Campus Fun Run"
+    },
+    {
+      "bibId": "E2-5K-001",
+      "runner": {
+        "name": {
+          "lastName": "Flores",
+          "firstName": "Gabriela",
+          "middleName": "Torres"
+        },
+        "gender": "Female",
+        "contactNumber": "09221234567",
+        "birthDate": "2003-03-18",
+        "singletSize": "M"
+      },
+      "date": "2026-11-23",
+      "eventId": "2",
+      "raceCategory": "5K Student Run"
+    },
+    {
+      "bibId": "E2-10KC-001",
+      "runner": {
+        "name": {
+          "lastName": "Villanueva",
+          "firstName": "Mark",
+          "middleName": "Joseph"
+        },
+        "gender": "Male",
+        "contactNumber": "09231234567",
+        "birthDate": "1999-09-12",
+        "singletSize": "L"
+      },
+      "date": "2026-11-24",
+      "eventId": "2",
+      "raceCategory": "10K Competitive Run"
+    },
+    {
+      "bibId": "E2-10KF-001",
+      "runner": {
+        "name": {
+          "lastName": "Aquino",
+          "firstName": "Patricia",
+          "middleName": "Anne"
+        },
+        "gender": "Female",
+        "contactNumber": "09241234567",
+        "birthDate": "2001-11-25",
+        "singletSize": "2XS"
+      },
+      "date": "2026-11-24",
+      "eventId": "2",
+      "raceCategory": "10K Faculty and Staff Run"
+    },
+    {
+      "bibId": "E2-21K-001",
+      "runner": {
+        "name": {
+          "lastName": "Castillo",
+          "firstName": "Roberto",
+          "middleName": "Diaz"
+        },
+        "gender": "Male",
+        "contactNumber": "09251234567",
+        "birthDate": "1990-07-14",
+        "singletSize": "2XL"
+      },
+      "date": "2026-11-25",
+      "eventId": "2",
+      "raceCategory": "21K University Half Marathon"
+    }
+]

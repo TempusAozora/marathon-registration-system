@@ -27,13 +27,17 @@ public class RaceEvent {
 		this.raceCategories = new ArrayList<>();
 		for (Map<String, Object> category : (List<Map<String, Object>>) eventEntry.get("raceCategories")) {
 			this.raceCategories.add(new RaceCategory(
-				(String)category.get("name"), 
-				(int)category.get("id"), 
+				(String)category.get("categoryName"), 
+				(Double)category.get("registrationFee"), 
 				(int)category.get("minimumAge"), 
 				(int)category.get("slotLimit"),
 				(int)category.get("registeredSlots")
 			));	
 		}
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	public String getName() {
@@ -42,5 +46,13 @@ public class RaceEvent {
 	
 	public String getDate() {
 		return date;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public List<RaceCategory> getRaceCategories() {
+		return raceCategories;
 	}
 }

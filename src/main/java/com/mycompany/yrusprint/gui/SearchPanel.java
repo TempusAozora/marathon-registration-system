@@ -4,17 +4,47 @@
  */
 package com.mycompany.yrusprint.gui;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+import com.mycompany.yrusprint.helpers.SearchService;
+import com.mycompany.yrusprint.models.Registration;
+
 /**
  *
  * @author tempus
  */
 public class SearchPanel extends javax.swing.JPanel {
-
+    private List<RegistrationTemplate> searchResults = new ArrayList<>();
     /**
      * Creates new form SearchPanel
      */
     public SearchPanel() {
         initComponents();
+    }
+
+    public JButton getSearchButton() {
+        return SearchButton;
+    }
+
+    public JTextField getSearchField() {
+        return SearchField;
+    }
+
+    public void setSearchResults(List<RegistrationTemplate> l) {
+        searchResults = l;
+    }
+
+    public List<RegistrationTemplate> getSearchResults() {
+        return searchResults;
+    }
+
+    public JPanel getResultsPanel() {
+        return ResultsPanel;
     }
 
     /**
@@ -26,19 +56,82 @@ public class SearchPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Header = new javax.swing.JLabel();
+        SearchButton = new javax.swing.JButton();
+        ResultsPanel = new javax.swing.JPanel();
+        ResultsHeader = new javax.swing.JLabel();
+        ResultsHeader1 = new javax.swing.JLabel();
+        SearchField = new javax.swing.JTextField();
+
+        Header.setText("Search your registrations");
+
+        SearchButton.setText("Search");
+        SearchButton.addActionListener(this::SearchButtonActionPerformed);
+
+        ResultsPanel.setLayout(new javax.swing.BoxLayout(ResultsPanel, javax.swing.BoxLayout.LINE_AXIS));
+
+        ResultsHeader.setText("Bib id or contact number");
+
+        ResultsHeader1.setText("Results");
+
+        SearchField.addActionListener(this::SearchFieldActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ResultsHeader1)
+                            .addComponent(ResultsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(SearchField)
+                                    .addComponent(ResultsHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(36, 36, 36)
+                                .addComponent(SearchButton))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(Header)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(Header)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ResultsHeader)
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SearchButton)
+                    .addComponent(SearchField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(ResultsHeader1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ResultsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SearchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchButtonActionPerformed
+
+    private void SearchFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Header;
+    private javax.swing.JLabel ResultsHeader;
+    private javax.swing.JLabel ResultsHeader1;
+    private javax.swing.JPanel ResultsPanel;
+    private javax.swing.JButton SearchButton;
+    private javax.swing.JTextField SearchField;
     // End of variables declaration//GEN-END:variables
 }

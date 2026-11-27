@@ -4,10 +4,6 @@
  */
 package com.mycompany.yrusprint.gui;
 
-import javax.swing.JPanel;
-
-import com.mycompany.yrusprint.models.RaceEvent;
-
 /**
  *
  * @author tempus2
@@ -21,9 +17,7 @@ public class EventsPanel extends javax.swing.JPanel {
         initComponents();
     }
 
-    public void addEvent(RaceEvent event) {
-        EventPreviewTemplate eventPreview = new EventPreviewTemplate();
-        eventPreview.setEvent(event);
+    public void placeEventPreview(EventPreviewTemplate eventPreview) {
         body.add(eventPreview);
     }
 

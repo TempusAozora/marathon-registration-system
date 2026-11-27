@@ -4,17 +4,44 @@
  */
 package com.mycompany.yrusprint.gui;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.mycompany.yrusprint.models.RaceCategory;
+import com.mycompany.yrusprint.models.RaceEvent;
+
 /**
  *
  * @author tempus
  */
 public class EventDetails extends javax.swing.JPanel {
+    private List<RaceCategoryTemplate> raceCategories = new ArrayList<>();
 
     /**
      * Creates new form EventDetails
      */
-    public EventDetails() {
+    public EventDetails(Runnable backbuttonFunction) {
         initComponents();
+        BackButton.addActionListener((e) -> backbuttonFunction.run());
+    }
+
+    public void setEvent(RaceEvent event) {
+        EventName.setText(event.getName());
+        EventDate.setText(event.getDate());
+        EventDescription.setText(event.getDescription());
+
+        for (RaceCategoryTemplate raceCategory : raceCategories) {
+            EventCategoryContainer.remove(raceCategory);
+        }
+
+        raceCategories = new ArrayList<>();
+
+        for (RaceCategory raceCategory : event.getRaceCategories()) {
+            RaceCategoryTemplate raceCategoryTemplate = new RaceCategoryTemplate(raceCategory);
+            
+            EventCategoryContainer.add(raceCategoryTemplate);
+            raceCategories.add(raceCategoryTemplate);
+        }
     }
 
     /**
@@ -26,19 +53,94 @@ public class EventDetails extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        EventName = new javax.swing.JLabel();
+        EventCategory = new javax.swing.JLabel();
+        RegisterButton = new javax.swing.JButton();
+        BackButton = new javax.swing.JButton();
+        EventDescription = new javax.swing.JLabel();
+        EventDate = new javax.swing.JLabel();
+        EventCategoryContainer = new javax.swing.JPanel();
+
+        EventName.setText("Event name");
+
+        EventCategory.setText("Categories");
+
+        RegisterButton.setText("Register");
+        RegisterButton.addActionListener(this::RegisterButtonActionPerformed);
+
+        BackButton.setText("Back");
+        BackButton.addActionListener(this::BackButtonActionPerformed);
+
+        EventDescription.setText("Event description");
+
+        EventDate.setText("Date");
+
+        EventCategoryContainer.setLayout(new javax.swing.BoxLayout(EventCategoryContainer, javax.swing.BoxLayout.Y_AXIS));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EventName)
+                            .addComponent(EventDate)
+                            .addComponent(EventDescription)
+                            .addComponent(EventCategory)
+                            .addComponent(EventCategoryContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(RegisterButton)))
+                .addGap(41, 41, 41))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(31, 31, 31)
+                    .addComponent(BackButton)
+                    .addContainerGap(462, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(EventName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EventDate)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EventDescription)
+                .addGap(33, 33, 33)
+                .addComponent(EventCategory)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EventCategoryContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
+                .addComponent(RegisterButton)
+                .addGap(22, 22, 22))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(347, Short.MAX_VALUE)
+                    .addComponent(BackButton)
+                    .addGap(23, 23, 23)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegisterButtonActionPerformed
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackButton;
+    private javax.swing.JLabel EventCategory;
+    private javax.swing.JPanel EventCategoryContainer;
+    private javax.swing.JLabel EventDate;
+    private javax.swing.JLabel EventDescription;
+    private javax.swing.JLabel EventName;
+    private javax.swing.JButton RegisterButton;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,17 +14,20 @@ import com.mycompany.yrusprint.models.RaceEvent;
  * @author tempus
  */
 public class EventPreviewTemplate extends javax.swing.JPanel {
-
     /**
      * Creates new form EventPreviewTemplate
      */
-    public EventPreviewTemplate() {
-        initComponents();
-    }
+    private RaceEvent raceEvent;
 
-    public void setEvent(RaceEvent event) {
-        eventName.setText(event.getName());
-        eventDate.setText(OffsetDateTime.parse(event.getDate()).toLocalDateTime().format(DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm")));
+    public EventPreviewTemplate(RaceEvent raceEvent, Runnable viewCallback, Runnable registerCallback) {
+        initComponents();
+        
+        this.raceEvent = raceEvent;
+        eventView.addActionListener((e) -> {viewCallback.run();});
+        eventView.addActionListener((e) -> {registerCallback.run();});
+
+        eventName.setText(raceEvent.getName());
+        eventDate.setText(OffsetDateTime.parse(raceEvent.getDate()).toLocalDateTime().format(DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm")));
     }
 
     /**

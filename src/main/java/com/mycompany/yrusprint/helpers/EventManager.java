@@ -30,8 +30,17 @@ public class EventManager {
         return events;
     }
 
+    public RaceEvent getEventById(int id) {
+        for (RaceEvent e : events) {
+            if (e.getId() == id) {
+                return e;
+            }
+        }
+        return null;
+    }
+
     public void fetchEvents() {
-        List<Map<String, Object>> eventsData = DataService.read("events.json");
+        List<Map<String, Object>> eventsData = DataService.read("data/events.json");
         events = new ArrayList<>();
         if (eventsData.size() == 0) return;
 

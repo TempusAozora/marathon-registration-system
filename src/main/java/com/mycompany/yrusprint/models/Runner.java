@@ -5,6 +5,7 @@
 package com.mycompany.yrusprint.models;
 
 import java.time.LocalDate;
+import java.util.Map;
 
 /**
  *
@@ -12,18 +13,31 @@ import java.time.LocalDate;
  */
 public class Runner extends Person {
     private String singletSize; // from 2XS to 2XL
-    private RaceCategory raceCategory;
     
     Runner(
             PersonName name, 
             String gender,
             String contactNumber,
             LocalDate birthDate, 
-            String singletSize, 
-            RaceCategory raceCategory
+            String singletSize
     ) {
         super(name, gender, birthDate, contactNumber);
         this.singletSize = singletSize;
-        this.raceCategory = raceCategory;
+    }
+
+    Runner(Map<String, Object> runnerEntry) {
+        PersonName personName = new PersonName((Map<String, String>)runnerEntry.get("name"));
+        super(
+            personName, 
+            (String)runnerEntry.get("gender"),
+            LocalDate.parse((String)runnerEntry.get("birthDate")),
+            (String)runnerEntry.get("contactNumber")
+        );
+
+        this.singletSize = (String)runnerEntry.get("singletSize");
+    }
+
+    public String getSingletSize() {
+        return singletSize;
     }
 }
