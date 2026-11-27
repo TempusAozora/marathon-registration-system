@@ -7,6 +7,7 @@ package com.mycompany.yrusprint;
 import com.mycompany.yrusprint.gui.BibPanel;
 import com.mycompany.yrusprint.gui.EventDetails;
 import com.mycompany.yrusprint.gui.EventPreviewTemplate;
+import com.mycompany.yrusprint.gui.EventRegisterPanel;
 import com.mycompany.yrusprint.gui.EventsPanel;
 import com.mycompany.yrusprint.gui.RegistrationJFrame;
 import com.mycompany.yrusprint.gui.RegistrationTemplate;
@@ -43,11 +44,12 @@ public class YRUSprint {
             // Events
             EventDetails eventDetails = new EventDetails(backButtonFunction);
             EventsPanel eventsPanel = new EventsPanel();
+            EventRegisterPanel registerPanel = new EventRegisterPanel();
             for (RaceEvent event : eventManager.getEvents()) {
                 EventPreviewTemplate eventPreview = new EventPreviewTemplate(
                     event,
                     () -> {cardLayout.show(windowBody, "EVENT_DETAILS"); eventDetails.setEvent(event);},
-                    () -> {cardLayout.show(windowBody, "REGISTER_PAGE");}
+                    () -> {cardLayout.show(windowBody, "REGISTER_PANEL"); System.out.println("CLICKED");}
                 );
                 eventsPanel.placeEventPreview(eventPreview);
             }
@@ -92,6 +94,7 @@ public class YRUSprint {
             windowBody.add(searchPanel, "SEARCH_PANEL");
             windowBody.add(bibPanel, "BIB_PREVIEW");
             windowBody.add(eventDetails, "EVENT_DETAILS");
+            windowBody.add(registerPanel, "REGISTER_PANEL");
 
             mainWindow.setVisible(true);
         });

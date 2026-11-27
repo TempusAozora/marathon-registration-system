@@ -55,4 +55,13 @@ public class RaceEvent {
 	public List<RaceCategory> getRaceCategories() {
 		return raceCategories;
 	}
+
+	public RaceCategory getRaceCategoryByName(String name) {
+		for (RaceCategory rC : raceCategories) {
+            if (rC.getCategoryName().equals(name)) {
+                return rC;
+            }
+        }
+        return null;
+	}
 }

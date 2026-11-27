@@ -33,7 +33,7 @@ public class Runner extends Person {
             LocalDate.parse((String)runnerEntry.get("birthDate")),
             (String)runnerEntry.get("contactNumber")
         );
-
+        
         this.singletSize = (String)runnerEntry.get("singletSize");
     }
 

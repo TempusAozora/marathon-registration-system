@@ -24,7 +24,7 @@ public class EventPreviewTemplate extends javax.swing.JPanel {
         
         this.raceEvent = raceEvent;
         eventView.addActionListener((e) -> {viewCallback.run();});
-        eventView.addActionListener((e) -> {registerCallback.run();});
+        eventRegister.addActionListener((e) -> {registerCallback.run();});
 
         eventName.setText(raceEvent.getName());
         eventDate.setText(OffsetDateTime.parse(raceEvent.getDate()).toLocalDateTime().format(DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm")));
