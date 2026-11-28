@@ -25,7 +25,7 @@
                           <Component id="EventDate" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="EventDescription" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="EventCategory" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="EventCategoryContainer" alignment="0" pref="503" max="32767" attributes="0"/>
+                          <Component id="EventCategoryContainer" alignment="0" pref="758" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -39,7 +39,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Component id="BackButton" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="462" max="32767" attributes="0"/>
+                  <EmptySpace pref="713" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>

@@ -98,7 +98,7 @@ public class EventDetails extends javax.swing.JPanel {
                             .addComponent(EventDate)
                             .addComponent(EventDescription)
                             .addComponent(EventCategory)
-                            .addComponent(EventCategoryContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)))
+                            .addComponent(EventCategoryContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 758, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(119, 119, 119)
                         .addComponent(RegisterButton)))
@@ -107,7 +107,7 @@ public class EventDetails extends javax.swing.JPanel {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(31, 31, 31)
                     .addComponent(BackButton)
-                    .addContainerGap(462, Short.MAX_VALUE)))
+                    .addContainerGap(713, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
