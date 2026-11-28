@@ -14,6 +14,7 @@ import com.mycompany.yrusprint.gui.RegistrationTemplate;
 import com.mycompany.yrusprint.gui.SearchPanel;
 import com.mycompany.yrusprint.helpers.EventManager;
 import com.mycompany.yrusprint.helpers.SearchService;
+import com.mycompany.yrusprint.helpers.CardLayoutManager;
 import com.mycompany.yrusprint.models.RaceEvent;
 import com.mycompany.yrusprint.models.Registration;
 
@@ -36,32 +37,35 @@ public class YRUSprint {
             RegistrationJFrame mainWindow = new RegistrationJFrame();
             JButton eventsButton = mainWindow.getEventsButton();
             JButton searchButton = mainWindow.getSearchButton();
-            CardLayout cardLayout = mainWindow.getCardLayout();
             JPanel windowBody = mainWindow.getBody();
-
-            Runnable backButtonFunction = () -> cardLayout.show(windowBody, "EVENT_PANEL"); 
+            CardLayoutManager cardLayoutManager = new CardLayoutManager(windowBody, mainWindow.getCardLayout());
             
             // Events
-            EventDetails eventDetails = new EventDetails(backButtonFunction);
             EventsPanel eventsPanel = new EventsPanel();
-            EventRegisterPanel registerPanel = new EventRegisterPanel();
+            BibPanel bibPanel = new BibPanel(() -> cardLayoutManager.back());
+            EventRegisterPanel registerPanel = new EventRegisterPanel(
+                () -> cardLayoutManager.back(),
+                (r) -> {
+                    cardLayoutManager.reset();
+                    bibPanel.setRegistration(r);
+                    cardLayoutManager.show(bibPanel);
+                }
+            );
+            EventDetails eventDetails = new EventDetails(() -> cardLayoutManager.back(), (event) -> {cardLayoutManager.show(registerPanel); registerPanel.setEvent(event);});
             for (RaceEvent event : eventManager.getEvents()) {
                 EventPreviewTemplate eventPreview = new EventPreviewTemplate(
                     event,
-                    () -> {cardLayout.show(windowBody, "EVENT_DETAILS"); eventDetails.setEvent(event);},
-                    () -> {cardLayout.show(windowBody, "REGISTER_PANEL"); System.out.println("CLICKED");}
+                    () -> {cardLayoutManager.show(eventDetails); eventDetails.setEvent(event); },
+                    () -> {cardLayoutManager.show(registerPanel); registerPanel.setEvent(event);}
                 );
                 eventsPanel.placeEventPreview(eventPreview);
             }
             
-            eventsButton.addActionListener(e -> {
-                cardLayout.show(windowBody, "EVENT_PANEL");
-            });
+            eventsButton.addActionListener(e -> cardLayoutManager.show(eventsPanel));
 
             // Search
             SearchPanel searchPanel = new SearchPanel();
-            BibPanel bibPanel = new BibPanel(backButtonFunction);
-            searchButton.addActionListener(e -> cardLayout.show(windowBody, "SEARCH_PANEL"));
+            searchButton.addActionListener(e -> cardLayoutManager.show(searchPanel));
             searchPanel.getSearchButton().addActionListener((e) -> {
                 JTextField SearchField = searchPanel.getSearchField();
                 JPanel ResultsPanel = searchPanel.getResultsPanel();
@@ -79,7 +83,7 @@ public class YRUSprint {
 
                 for (Registration r : registrations) {
                     RegistrationTemplate template = new RegistrationTemplate(r, () -> {
-                        cardLayout.show(windowBody, "BIB_PREVIEW");
+                        cardLayoutManager.show(bibPanel);
                         bibPanel.setRegistration(r);
                     });
                     searchResults.add(template);
@@ -90,11 +94,11 @@ public class YRUSprint {
                 ResultsPanel.repaint();
             });
 
-            windowBody.add(eventsPanel, "EVENT_PANEL");
-            windowBody.add(searchPanel, "SEARCH_PANEL");
-            windowBody.add(bibPanel, "BIB_PREVIEW");
-            windowBody.add(eventDetails, "EVENT_DETAILS");
-            windowBody.add(registerPanel, "REGISTER_PANEL");
+            cardLayoutManager.add(eventsPanel, "EVENT_PANEL");
+            cardLayoutManager.add(searchPanel, "SEARCH_PANEL");
+            cardLayoutManager.add(bibPanel, "BIB_PREVIEW");
+            cardLayoutManager.add(eventDetails, "EVENT_DETAILS");
+            cardLayoutManager.add(registerPanel, "REGISTER_PANEL");
 
             mainWindow.setVisible(true);
         });

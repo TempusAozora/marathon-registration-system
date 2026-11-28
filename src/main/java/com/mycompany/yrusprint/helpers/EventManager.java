@@ -49,8 +49,4 @@ public class EventManager {
             events.add(e);
         }
     }
-
-    public void updateEvents() {
-
-    }
 }

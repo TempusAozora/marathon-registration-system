@@ -4,8 +4,11 @@
  */
 package com.mycompany.yrusprint.models;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.mycompany.yrusprint.helpers.DataService;
 
 /**
  *
@@ -25,13 +28,26 @@ public class RaceEvent {
 		this.date = (String)eventEntry.get("date");
 
 		this.raceCategories = new ArrayList<>();
+		
+		List<Map<String, Object>> registrationData = DataService.read("data/registration_entries.json", (e) -> {
+			return (e.get("eventId").equals(String.valueOf(id)));
+		});;
+
+		Map<String, Integer> raceCategoryCount = new HashMap<>(); 
+		for (Map<String, Object> r : registrationData) {
+			if (!r.containsKey("raceCategory")) continue;
+			raceCategoryCount.merge((String)r.get("raceCategory"), 1, Integer::sum);
+		}
+		
 		for (Map<String, Object> category : (List<Map<String, Object>>) eventEntry.get("raceCategories")) {
+			String raceCategoryName = (String)category.get("categoryName");
+			Integer count = raceCategoryCount.get(raceCategoryName);
 			this.raceCategories.add(new RaceCategory(
-				(String)category.get("categoryName"), 
+				raceCategoryName, 
 				(Double)category.get("registrationFee"), 
 				(int)category.get("minimumAge"), 
 				(int)category.get("slotLimit"),
-				(int)category.get("registeredSlots")
+				(count == null) ? 0 : count
 			));	
 		}
 	}

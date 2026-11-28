@@ -4,22 +4,16 @@
  */
 package com.mycompany.yrusprint.helpers;
 
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.Map;
 import java.util.function.Consumer;
-
-import com.mycompany.yrusprint.models.RaceCategory;
-import com.mycompany.yrusprint.models.RaceEvent;
-import com.mycompany.yrusprint.models.Registration;
-import com.mycompany.yrusprint.models.Runner;
+import com.mycompany.yrusprint.models.ValidationResult;
 
 /**
  *
  * @author tempus
  */
 
-abstract class Validator {
+public abstract class Validator {
     protected Validator next;
     protected Consumer<String> callback; 
 
@@ -28,27 +22,17 @@ abstract class Validator {
         return next;
     }
 
-    public abstract boolean validate(Map<String, String> entry);
+    public abstract ValidationResult validate(Map<String, String> entry);
 
-    protected boolean passToNext(Map<String, String> entry) {
+    protected ValidationResult passToNext(Map<String, String> entry) {
         if (next == null) {
-            return true;
+            return new ValidationResult(true, "Success.");
         }
 
         return next.validate(entry);
     }
 }
 
-class FieldValidator extends Validator {
-    @Override
-    public boolean validate(Map<String, String> entry) {
-        for (Map.Entry<String, String> e : entry.entrySet()) {
-            if (e.getValue().isEmpty()) {
-                callback.accept("One or more empty fields");
-                return false;
-            }
-        }
 
-        return passToNext(entry);
-    }
-}
+
+

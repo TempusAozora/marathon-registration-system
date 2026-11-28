@@ -4,8 +4,13 @@
  */
 package com.mycompany.yrusprint.gui;
 
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+
+import javax.swing.text.DateFormatter;
 
 import com.mycompany.yrusprint.models.RaceCategory;
 import com.mycompany.yrusprint.models.RaceEvent;
@@ -16,18 +21,20 @@ import com.mycompany.yrusprint.models.RaceEvent;
  */
 public class EventDetails extends javax.swing.JPanel {
     private List<RaceCategoryTemplate> raceCategories = new ArrayList<>();
+    private RaceEvent currentEvent;
 
     /**
      * Creates new form EventDetails
      */
-    public EventDetails(Runnable backbuttonFunction) {
+    public EventDetails(Runnable backbuttonFunction, Consumer<RaceEvent> registerFunction) {
         initComponents();
         BackButton.addActionListener((e) -> backbuttonFunction.run());
+        RegisterButton.addActionListener((e) -> registerFunction.accept(currentEvent));
     }
 
     public void setEvent(RaceEvent event) {
         EventName.setText(event.getName());
-        EventDate.setText(event.getDate());
+        EventDate.setText(OffsetDateTime.parse(event.getDate()).toLocalDateTime().format(DateTimeFormatter.ofPattern("MMM dd, yyyy HH:mm")));
         EventDescription.setText(event.getDescription());
 
         for (RaceCategoryTemplate raceCategory : raceCategories) {
@@ -42,6 +49,7 @@ public class EventDetails extends javax.swing.JPanel {
             EventCategoryContainer.add(raceCategoryTemplate);
             raceCategories.add(raceCategoryTemplate);
         }
+        currentEvent = event;
     }
 
     /**

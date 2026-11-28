@@ -9,29 +9,25 @@
 				"categoryName": "5K Fun Run",
 				"registrationFee": 350.00,
 				"minimumAge": 18,
-				"slotLimit": 500,
-				"registeredSlots": 0
+				"slotLimit": 500
 			},
 			{
 				"categoryName": "10K Run",
 				"registrationFee": 500.00,
 				"minimumAge": 18,
-				"slotLimit": 400,
-				"registeredSlots": 0
+				"slotLimit": 400
 			},
 			{
 				"categoryName": "21K Half Marathon",
 				"registrationFee": 800.00,
 				"minimumAge": 18,
-				"slotLimit": 300,
-				"registeredSlots": 0
+				"slotLimit": 300
 			},
 			{
 				"categoryName": "42K Full Marathon",
 				"registrationFee": 1200.00,
 				"minimumAge": 18,
-				"slotLimit": 250,
-				"registeredSlots": 0
+				"slotLimit": 250
 			}
 		]
 			},
@@ -45,36 +41,31 @@
 				"categoryName": "3K Campus Fun Run",
 				"registrationFee": 150.00,
 				"minimumAge": 16,
-				"slotLimit": 300,
-				"registeredSlots": 0
+				"slotLimit": 300
 			},
 			{
 				"categoryName": "5K Student Run",
 				"registrationFee": 200.00,
 				"minimumAge": 18,
-				"slotLimit": 400,
-				"registeredSlots": 0
+				"slotLimit": 400
 			},
 			{
 				"categoryName": "10K Competitive Run",
 				"registrationFee": 350.00,
 				"minimumAge": 18,
-				"slotLimit": 250,
-				"registeredSlots": 0
+				"slotLimit": 250
 			},
 			{
 				"categoryName": "10K Faculty and Staff Run",
 				"registrationFee": 300.00,
 				"minimumAge": 21,
-				"slotLimit": 100,
-				"registeredSlots": 0
+				"slotLimit": 100
 			},
 			{
 				"categoryName": "21K University Half Marathon",
 				"registrationFee": 500.00,
 				"minimumAge": 18,
-				"slotLimit": 150,
-				"registeredSlots": 0
+				"slotLimit": 150
 			}
 		]
 	}

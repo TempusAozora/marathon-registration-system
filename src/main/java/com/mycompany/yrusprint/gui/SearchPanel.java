@@ -11,9 +11,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.mycompany.yrusprint.helpers.SearchService;
-import com.mycompany.yrusprint.models.Registration;
-
 /**
  *
  * @author tempus
