@@ -1,0 +1,72 @@
+[ 
+	{ 
+		"id": 1, 
+		"name": "CvSU Bacoor fun run.", 
+		"description": "A marathon open from 1st to 4th year. Explore bustling areas from SM Southmall to CvSU bacoor campus.", 
+		"date": "2026-12-05T07:00:00Z", 
+		"raceCategories": [
+			{
+				"categoryName": "5K Fun Run",
+				"registrationFee": 350.00,
+				"minimumAge": 18,
+				"slotLimit": 500
+			},
+			{
+				"categoryName": "10K Run",
+				"registrationFee": 500.00,
+				"minimumAge": 18,
+				"slotLimit": 400
+			},
+			{
+				"categoryName": "21K Half Marathon",
+				"registrationFee": 800.00,
+				"minimumAge": 18,
+				"slotLimit": 300
+			},
+			{
+				"categoryName": "42K Full Marathon",
+				"registrationFee": 1200.00,
+				"minimumAge": 18,
+				"slotLimit": 250
+			}
+		]
+			},
+			{ 
+				"id": 2, 
+				"name": "Travel to Main Campus.", 
+				"description": "Are you ready to challenge yourself to run a roundtrip from CvSU Bacoor campus to CvSU Main campus?", 
+				"date":	"2026-12-10T07:00:00Z", 
+				"raceCategories": [
+			{
+				"categoryName": "3K Campus Fun Run",
+				"registrationFee": 150.00,
+				"minimumAge": 16,
+				"slotLimit": 300
+			},
+			{
+				"categoryName": "5K Student Run",
+				"registrationFee": 200.00,
+				"minimumAge": 18,
+				"slotLimit": 400
+			},
+			{
+				"categoryName": "10K Competitive Run",
+				"registrationFee": 350.00,
+				"minimumAge": 18,
+				"slotLimit": 250
+			},
+			{
+				"categoryName": "10K Faculty and Staff Run",
+				"registrationFee": 300.00,
+				"minimumAge": 21,
+				"slotLimit": 100
+			},
+			{
+				"categoryName": "21K University Half Marathon",
+				"registrationFee": 500.00,
+				"minimumAge": 18,
+				"slotLimit": 150
+			}
+		]
+	}
+]
