@@ -26,9 +26,8 @@ public class Runner extends Person {
     }
 
     Runner(Map<String, Object> runnerEntry) {
-        PersonName personName = new PersonName((Map<String, String>)runnerEntry.get("name"));
         super(
-            personName, 
+            new PersonName((Map<String, String>)runnerEntry.get("name")), 
             (String)runnerEntry.get("gender"),
             LocalDate.parse((String)runnerEntry.get("birthDate")),
             (String)runnerEntry.get("contactNumber")
